@@ -25,7 +25,7 @@ describe('Counter', () => {
         
         await userEvent.click(screen.getByText('+'))
 
-        expect(counter.innerText).toBe("Value is "+(initial+1))
+        expect(counter.innerHTML).toBe("Value is "+(initial+1))
     })
     it('should decrement counter value', async () => {
         const initial = 0
@@ -38,7 +38,7 @@ describe('Counter', () => {
         
         await userEvent.click(screen.getByText('-'))
 
-        expect(counter.innerText).toBe("Value is "+(initial-1))
+        expect(counter.innerHTML).toBe("Value is "+(initial-1))
     })
     it('should reset counter value', async () => {
         const initial = 0
@@ -51,10 +51,10 @@ describe('Counter', () => {
         
         await userEvent.dblClick(screen.getByText('-'))
 
-        expect(counter.innerText).toBe("Value is "+(initial-2))
+        expect(counter.innerHTML).toBe("Value is "+(initial-2))
 
         await userEvent.dblClick(screen.getByText('reset'))
 
-        expect(counter.innerText).toBe("Value is "+(initial))
+        expect(counter.innerHTML).toBe("Value is "+(initial))
     })
 })
